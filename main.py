@@ -1,16 +1,15 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from generate import generate_example
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+name = input("Your name is:")
+print("How many tasks do you want to solve:")
+kol = int(input())
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+c = generate_example(kol)
+for i in range (0, kol):
+    print(c[i])
+    a = int(input())
+    if a == eval(c[i]):
+        print("GREAT JOB")
+    else:
+        print("LOOSER")

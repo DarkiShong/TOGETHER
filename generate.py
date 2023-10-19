@@ -7,13 +7,10 @@ def generate_example(n):
     for i in range(n):
         a = random.choice(operation)
         if a == '+' or a == '-':
-            b = str(random.randint(0, 1000)) + a + str(random.randint(0, 1000))
+            b = str(random.randint(0, 1000)) + a + str(random.randint(1, 1000))
             data.append(b)
         else:
-            b = str(random.randint(0, 100)) + a + str(random.randint(0, 100))
+            b = str(random.randint(0, 100)) + a + str(random.randint(1, 100))
             data.append(b)
 
     return data
-
-
-print(generate_example(5))
