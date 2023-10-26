@@ -11,14 +11,14 @@ def generate_example(n, d, num_of_numbs):
         if '*' not in operation:
             b = ''
             for j in range(num_of_numbs):
-                b = b + str(random.randint(0, 1000))
-                if j != num_of_numbs:
+                b = b + str(random.randint(0, 100))
+                if j != num_of_numbs - 1:
                     b += str(random.choice(operation))
             data.append(b)
         else:
             b = ''
             for j in range(num_of_numbs):
-                b = b + str(random.randint(1, 100))
+                b = b + str(random.randint(1, 10))
                 if j != num_of_numbs:
                     b += str(random.choice(operation))
             data.append(b)

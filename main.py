@@ -30,11 +30,22 @@ while True:
     except ValueError:
         print("Oops!  Use onlu numbers.  Try again...")
 
-c = generate_example(kol,d,kolnum)
+b = 0
+
+c = generate_example(kol, d, kolnum)
+
 for i in range(0, kol):
     print(c[i])
     a = int(input())
     if a == eval(c[i]):
         print("GREAT JOB")
+        b += 1
     else:
         print("LOOSER")
+print("Right qwestions:\n",b,"/",kol)
+print("Prosent:\n",round((b/kol)*100))
+if (b/kol) * 100 >=50 :
+    print("U're AWESOME")
+else:
+    print("KILL YOUR SELF")
+
