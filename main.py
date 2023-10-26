@@ -22,12 +22,12 @@ while True:
 
 while True:
     try:
-        kol = input("How many tasks do you want to solve:\n")
+        kol = int(input("How many tasks do you want to solve:\n"))
         break
     except ValueError:
         print("Oops!  Use onlu numbers.  Try again...")
 
-c = generate_example(kol, d)
+c = generate_example(kol, d, kolnum)
 for i in range(0, kol):
     print(c[i])
     a = int(input())
