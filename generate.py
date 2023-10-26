@@ -1,19 +1,26 @@
 import random
 
 
-def generate_example(n, d):
+def generate_example(n, d, num_of_numbs):
     data = []
     if d == 1:
         operation = ['+', '-']
     else:
         operation = ['+', '*', '/', '-']
     for i in range(n):
-        a = random.choice(operation)
-        if a == '+' or a == '-':
-            b = str(random.randint(0, 1000)) + a + str(random.randint(1, 1000))
+        if '*' not in operation:
+            b = ''
+            for j in range(num_of_numbs):
+                b = b + str(random.randint(0, 1000))
+                if j != num_of_numbs:
+                    b += str(random.choice(operation))
             data.append(b)
         else:
-            b = str(random.randint(0, 100)) + a + str(random.randint(1, 100))
+            b = ''
+            for j in range(num_of_numbs):
+                b = b + str(random.randint(1, 100))
+                if j != num_of_numbs:
+                    b += str(random.choice(operation))
             data.append(b)
 
     return data
