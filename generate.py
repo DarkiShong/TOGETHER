@@ -21,9 +21,9 @@ def generate_example(n, d, num_of_numbs):
         else:
             b = ''
             for j in range(num_of_numbs):
-                a = random.randint(-10, 10)
-                while a != 0:
-                    a = random.randint(-10, 10)
+                a = random.randint(-20, 30)
+                while a == 0:
+                    a = random.randint(-20, 30)
 
                 if a < 0:
                     a = '(' + str(a) + ')'
@@ -33,4 +33,3 @@ def generate_example(n, d, num_of_numbs):
             data.append(b)
 
     return data
-
