@@ -7,9 +7,12 @@ name = input("Your name is:\n")
 while True:
     try:
         d = int(input("Enter difficulty level (1 or 2)\n"))
-        break
+        if d == 1 or d == 2:
+            break
+        else:
+            print("Oops!  Use onlu 1 or 2.  Try again...")
     except ValueError:
-        print("Oops!  Use onlu numbers.  Try again...")
+        print("Oops!  Use onlu 1 or 2.  Try again...")
 
 
 while True:
@@ -22,12 +25,12 @@ while True:
 
 while True:
     try:
-        kol = input("How many tasks do you want to solve:\n")
+        kol = int(input("How many tasks do you want to solve:\n"))
         break
     except ValueError:
         print("Oops!  Use onlu numbers.  Try again...")
 
-c = generate_example(kol, d)
+c = generate_example(kol,d,kolnum)
 for i in range(0, kol):
     print(c[i])
     a = int(input())
