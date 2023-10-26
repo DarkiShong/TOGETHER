@@ -6,7 +6,7 @@ name = input("Your name is:\n")
 
 while True:
     try:
-        d = int(input("Enter difficulty level (1 or 2)\n"))
+        d = int(input("Enter difficulty level (1 or 2):\n"))
         if d == 1 or d == 2:
             break
         else:
@@ -17,18 +17,23 @@ while True:
 
 while True:
     try:
-        kolnum = int(input("How many numbers in tasks do u want:\n"))
-        break
+        kolnum = int(input("Enter how many numbers do u want see in qwestion:\n"))
+        if 10 >= kolnum >= 0:
+            break
+        else:
+            print("Oops!  Use number > or = 0 and numbers < or = 10.  Try again...")
     except ValueError:
-        print("Oops!  Use onlu numbers.  Try again...")
-
+        print("Oops!  Use number > or = 0 and numbers < or = 10.  Try again...")
 
 while True:
     try:
-        kol = int(input("How many tasks do you want to solve:\n"))
-        break
+        kol = int(input("Enter how many qwestions do u want solve:s\n"))
+        if 100 >= kol >= 0:
+            break
+        else:
+            print("Oops!  Use number > or = 0 and number < or = 100.  Try again...")
     except ValueError:
-        print("Oops!  Use onlu numbers.  Try again...")
+        print("Oops!  Use number > or = 0 and numbers < or = 10.  Try again...")
 
 b = 0
 
@@ -48,10 +53,11 @@ for i in range(0, kol):
     else:
         print("LOOSER","RIGHT QWESTION WAS:",eval(c[i]))
 print("Right qwestions:\n",b,"/",kol)
+
 print("Prosent:\n",round((b/kol)*100))
 if (b/kol) * 100 >=50 :
     print("U're AWESOME")
-elif (b/kol) * 100 < 50 and (b/kol) * 100>0:
+elif 0 < (b/kol) * 100 < 50:
     print("TRY AGAIN")
 elif (b/kol) * 100 == 0:
     print("KILL YOUR SELF")
