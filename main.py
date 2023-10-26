@@ -1,14 +1,31 @@
 from generate import generate_example
 
 
-name = input("Your name is:")
-d = 0
-while d != '1' and d != '2':
-    print("Enter difficulty level (1 or 2)")
-    d = input()
+name = input("Your name is:\n")
+                            
 
-print("How many tasks do you want to solve:")
-kol = int(input())
+while True:
+    try:
+        d = int(input("Enter difficulty level (1 or 2)\n"))
+        break
+    except ValueError:
+        print("Oops!  Use onlu numbers.  Try again...")
+
+
+while True:
+    try:
+        kolnum = int(input("How many numbers in tasks do u want:\n"))
+        break
+    except ValueError:
+        print("Oops!  Use onlu numbers.  Try again...")
+
+
+while True:
+    try:
+        kol = input("How many tasks do you want to solve:\n")
+        break
+    except ValueError:
+        print("Oops!  Use onlu numbers.  Try again...")
 
 c = generate_example(kol, d)
 for i in range(0, kol):
