@@ -18,7 +18,7 @@ while True:
 while True:
     try:
         kolnum = int(input("Enter how many numbers do u want see in qwestion:\n"))
-        if 10 >= kolnum >= 0:
+        if 10 >= kolnum > 0:
             break
         else:
             print("Oops!  Use number > or = 0 and numbers < or = 10.  Try again...")
@@ -28,7 +28,7 @@ while True:
 while True:
     try:
         kol = int(input("Enter how many qwestions do u want solve:s\n"))
-        if 100 >= kol >= 0:
+        if 100 >= kol > 0:
             break
         else:
             print("Oops!  Use number > or = 0 and number < or = 100.  Try again...")
