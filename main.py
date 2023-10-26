@@ -36,16 +36,22 @@ c = generate_example(kol, d, kolnum)
 
 for i in range(0, kol):
     print(c[i])
-    a = int(input())
+    while True:
+        try:
+            a = int(input())
+            break
+        except ValueError:
+            print("Oops!  Use onlu numbers.  Try again...")
     if a == eval(c[i]):
         print("GREAT JOB")
         b += 1
     else:
-        print("LOOSER")
+        print("LOOSER","RIGHT QWESTION WAS:",eval(c[i]))
 print("Right qwestions:\n",b,"/",kol)
 print("Prosent:\n",round((b/kol)*100))
 if (b/kol) * 100 >=50 :
     print("U're AWESOME")
-else:
+elif (b/kol) * 100 < 50 and (b/kol) * 100>0:
+    print("TRY AGAIN")
+elif (b/kol) * 100 == 0:
     print("KILL YOUR SELF")
-
